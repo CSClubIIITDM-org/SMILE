@@ -1,18 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Topbar = () => {
   const [links] = useState([
-    {
-      name: "Home",
-      link: "/",
-      drop: [
-        {
-          name: "Events",
-          link: "events",
-        },
-      ],
-    },
     {
       name: "About Us",
       link: "/aboutus",
@@ -39,11 +29,11 @@ const Topbar = () => {
       drop: [
         {
           name: "Professors",
-          link: "/professors",
+          link: "/member/professors",
         },
         {
           name: "Scholars",
-          link: "/scholars",
+          link: "/member/scholars",
         },
       ],
     },
@@ -77,15 +67,25 @@ const Topbar = () => {
 
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink
+                className="nav-link px-3"
+                to="/"
+                exact
+                //   data-toggle="dropdown"
+              >
+                Home
+              </NavLink>
+            </li>
             {links.map((link, index) => (
               <li className="nav-item" key={index + 1}>
-                <Link
+                <NavLink
                   className="nav-link px-3"
                   to={link.link}
                   data-toggle={link.drop.length !== 0 ? "dropdown" : ""}
                 >
                   {link.name}
-                </Link>
+                </NavLink>
                 {link.drop.length !== 0 && (
                   <div className="dropdown-menu text-center w-100">
                     {link.drop.map((drop) => (
