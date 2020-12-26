@@ -10,7 +10,7 @@ const App = () => {
       <BrowserRouter>
         <Topbar />
         <Switch>
-          <Route path="/" component={HomePage} />
+          <Route path="/" exact component={HomePage} />
         </Switch>
       </BrowserRouter>
     </React.Fragment>
