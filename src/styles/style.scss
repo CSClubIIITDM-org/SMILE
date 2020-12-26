@@ -3,3 +3,14 @@
 * {
   font-family: "Playfair Display", serif;
 }
+
+.awssld {
+  --content-background-color: white;
+}
+.carousal {
+  filter: blur(3px);
+  opacity: 0.8;
+  overflow-x: hidden;
+  height: 80vh;
+  width: 100%;
+}
