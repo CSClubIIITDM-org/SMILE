@@ -65,4 +65,8 @@ body {
 .bg-dark {
   background-color: #151515 !important;
 }
+
+.list-group-flush > .list-group-item {
+  background-color: #e2ffe8;
+}
 /*# sourceMappingURL=style.css.map */

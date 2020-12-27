@@ -48,7 +48,7 @@ const HomePage = () => {
       <div className="container-fluid bg-light px-5">
         <div className="row mt-5">
           <div className="col-sm-3 mt-5">
-            <ul className="list-group list-group-flush">
+            <ul className="list-group list-group-flush shadow-sm">
               <li className="list-group-item">First item</li>
               <li className="list-group-item">Second item</li>
               <li className="list-group-item">Third item</li>
