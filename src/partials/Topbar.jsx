@@ -52,9 +52,22 @@ const Topbar = () => {
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-md bg-dark navbar-dark shadow flex-column">
-        <a className="navbar-brand w-100 d-block" href="/">
-          Logo
-        </a>
+        <div className="navbar-brand w-100 d-block d-flex align-items-center justify-content-between">
+          <a className="navbar-brand pl-5" href="/">
+            Logo
+          </a>
+          <form className="form-inline pr-2">
+            <input
+              type="text"
+              placeholder="Search.."
+              name="search"
+              className="form-control"
+            />
+            <button type="submit" className="btn btn-info">
+              <i className="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
 
         <button
           className="navbar-toggler"
