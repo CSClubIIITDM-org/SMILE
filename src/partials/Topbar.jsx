@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Topbar = () => {
   const [links] = useState([
@@ -52,31 +53,20 @@ const Topbar = () => {
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-md bg-dark navbar-dark shadow flex-column">
-        <div className="navbar-brand w-100 d-block d-flex align-items-center justify-content-between">
+        <div className="navbar-brand w-100 d-flex align-items-center justify-content-between">
           <a className="navbar-brand pl-5" href="/">
             Logo
           </a>
-          <form className="form-inline pr-2">
-            <input
-              type="text"
-              placeholder="Search.."
-              name="search"
-              className="form-control"
-            />
-            <button type="submit" className="btn btn-info">
-              <i className="fas fa-search"></i>
-            </button>
-          </form>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsibleNavbar"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <SearchBar classes="d-none d-md-block"></SearchBar>
         </div>
-
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsibleNavbar"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
 
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
@@ -85,7 +75,7 @@ const Topbar = () => {
                 className="nav-link px-3"
                 to="/"
                 exact
-                //   data-toggle="dropdown"
+              //   data-toggle="dropdown"
               >
                 Home
               </NavLink>
@@ -115,6 +105,7 @@ const Topbar = () => {
               </li>
             ))}
           </ul>
+          <SearchBar classes="d-md-none"></SearchBar>
         </div>
       </nav>
     </React.Fragment>
