@@ -1,49 +1,14 @@
-import React, { useState } from "react";
-import AwesomeSlider from "react-awesome-slider";
+import React from "react";
+// import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
+import Carousel from "../partials/carousel";
+import TextInfo from "../partials/TextInfo";
 
 const HomePage = () => {
-  const [slider] = useState([
-    {
-      image:
-        "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-      content: "Some Research content",
-    },
-    {
-      image:
-        "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-      content: "Some Research content",
-    },
-    {
-      image:
-        "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-      content: "Some Research content",
-    },
-    {
-      image:
-        "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-      content: "Some Research content",
-    },
-  ]);
 
   return (
     <React.Fragment>
-      <AwesomeSlider>
-        {slider.map((slider, index) => (
-          <div
-            key={index + 1}
-            className="w-100 p-0 position-relative text-center"
-          >
-            <img src={slider.image} alt="" className="carousal" />
-            <p
-              className="position-absolute"
-              //   style={{ marginTop: "-40vh", zIndex: 4000, opacity: 1 }}
-            >
-              {slider.content}
-            </p>
-          </div>
-        ))}
-      </AwesomeSlider>
+      <Carousel />
 
       <div className="container-fluid bg-light px-5">
         <div className="row mt-5">
@@ -107,33 +72,9 @@ const HomePage = () => {
       </div>
 
       <div className="container-fluid my-5">
-        <div className="col-sm-12 my-3">
-          <div className="card">
-            <div className="card-header">Header</div>
-            <div className="card-body">Content</div>
-            <div className="card-footer">Footer</div>
-          </div>
-        </div>
-        <div className="col-sm-12 my-3">
-          <div className="card">
-            <div className="card-header">Header</div>
-            <div className="card-body">Content</div>
-            <div className="card-footer">Footer</div>
-          </div>
-        </div>
-        <div className="col-sm-12 my-3">
-          <div className="card">
-            <div className="card-header">Header</div>
-            <div className="card-body">Content</div>
-            <div className="card-footer">Footer</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container-fluid bg-dark text-light py-5 px-3 my-0">
-        <h2>Footer</h2>
-        <p>Address</p>
-        <div className="text-center"></div>
+        <TextInfo />
+        <TextInfo />
+        <TextInfo />
       </div>
     </React.Fragment>
   );
