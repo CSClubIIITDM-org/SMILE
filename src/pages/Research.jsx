@@ -1,12 +1,12 @@
 import React from "react";
 import TextInfo from "../partials/TextInfo";
 
-const Publication = () => {
+const Research = () => {
 
   return (
     <React.Fragment>
       <div className="container-fluid">
-        <h1>Publication</h1>
+        <h1>Research</h1>
       </div>
 
       <div className="container-fluid my-5">
@@ -18,4 +18,4 @@ const Publication = () => {
   );
 };
 
-export default Publication;
+export default Research;
