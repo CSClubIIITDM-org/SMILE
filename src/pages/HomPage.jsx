@@ -1,5 +1,5 @@
 import React from "react";
-// import AwesomeSlider from "react-awesome-slider";
+import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import Carousel from "../partials/carousel";
 import TextInfo from "../partials/TextInfo";
