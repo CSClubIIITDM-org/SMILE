@@ -4,8 +4,9 @@ import HomePage from "./pages/HomPage";
 import Publication from "./pages/Publication";
 import Research from "./pages/Research";
 import About from "./pages/About";
-import Professor from "./pages/Professor.jsx";
-import Scholar from "./pages/Scholars";
+import Professor from "./pages/members/Professor.jsx";
+import Scholar from "./pages/members/Scholars";
+import Facility from "./pages/Facility";
 import Topbar from "./partials/Topbar";
 import "./styles/style.css";
 import Footer from "./partials/footer"; 
@@ -16,12 +17,15 @@ const App = () => {
       <BrowserRouter>
         <Topbar />
         <Switch>
+
           <Route path="/" exact component={HomePage} />
           <Route path="/Publication" exact component={Publication} />
           <Route path="/Research" exact component={Research} />
           <Route path="/aboutus" exact component={About} />
           <Route path="/member/professors" exact component={Professor} />
           <Route path="/member/scholars" exact component={Scholar} />
+          <Route path="/facility" exact component={Facility} />
+          
         </Switch>
         <Footer />
       </BrowserRouter>

@@ -42,12 +42,7 @@ const Topbar = () => {
       name: "Cultural activity",
       link: "/culturalactivity",
       drop: [],
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-      drop: [],
-    },
+    }
   ]);
 
   return (
