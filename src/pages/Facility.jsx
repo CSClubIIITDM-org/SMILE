@@ -1,26 +1,51 @@
-import React from "react";
-import ImgInfo from "../partials/ImgInfo";
+import React, { useEffect, useState } from "react";
 import Title from "../partials/Title";
+import axios from "axios";
+import ReactLoader from "../partials/Loading";
 
 const Facility = () => {
+  const [facilities, setFacilities] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const link = process.env.REACT_APP_API;
+
+  useEffect(() => {
+    const ac = new AbortController();
+    const getFacility = async () => {
+      const facilities = await axios.get(`${link}/common/facility`);
+      console.log(facilities.data.message);
+      setFacilities(facilities.data.message);
+      setIsLoading(false);
+    };
+    getFacility();
+    return () => ac.abort();
+  }, [link]);
   return (
     <React.Fragment>
       <div className="container-fluid bg-light px-5 mt-5">
         <Title title="Facility" />
-        <div className="row mb-5">
-          <div style={{ textAlign: "center" }} className="col-lg-3 col-md-6 ">
-            <ImgInfo />
+        {isLoading ? (
+          <ReactLoader content="Facilities Loading ..." />
+        ) : (
+          <div className="card-columns">
+            {facilities.map((facilty, index) => (
+              <div className="card text-center" key={index + 1}>
+                <div className="card-body">
+                  <div className="card-img-top mx-auto">
+                    <img
+                      src={`${link}/common/facility/${facilty._id}`}
+                      alt=""
+                      className="img-fluid"
+                      loading="eager"
+                    />
+                  </div>
+                  <h4 className="card-title">{facilty.name}</h4>
+                  <p className="card-text">{facilty.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-          <div style={{ textAlign: "center" }} className="col-lg-3 col-md-6 ">
-            <ImgInfo />
-          </div>
-          <div style={{ textAlign: "center" }} className="col-lg-3 col-md-6 ">
-            <ImgInfo />
-          </div>
-          <div style={{ textAlign: "center" }} className="col-lg-3 col-md-6 ">
-            <ImgInfo />
-          </div>
-        </div>
+        )}
       </div>
     </React.Fragment>
   );

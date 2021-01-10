@@ -21,16 +21,7 @@ const Topbar = () => {
     {
       name: "Members",
       link: "/member",
-      drop: [
-        {
-          name: "Professors",
-          link: "/member/professors",
-        },
-        {
-          name: "Scholars",
-          link: "/member/scholars",
-        },
-      ],
+      drop: [],
     },
     {
       name: "Cultural activity",

@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Publication from "./pages/Publication";
 import Research from "./pages/Research";
-import Professor from "./pages/members/Professor.jsx";
-import Scholar from "./pages/members/Scholars";
 import Facility from "./pages/Facility";
 import Topbar from "./partials/Topbar";
-import "./styles/style.css";
 import Footer from "./partials/Footer";
+import Member from "./pages/Member";
+import "./styles/style.css";
+import Cultural from "./pages/Cultural";
 
 const App = () => {
   return (
@@ -19,9 +19,9 @@ const App = () => {
           <Route path="/" exact component={HomePage} />
           <Route path="/Publication" exact component={Publication} />
           <Route path="/Research" exact component={Research} />
-          <Route path="/member/professors" exact component={Professor} />
-          <Route path="/member/scholars" exact component={Scholar} />
+          <Route path="/member" exact component={Member} />
           <Route path="/facility" exact component={Facility} />
+          <Route path="/culturalactivity" exact component={Cultural} />
         </Switch>
         <Footer />
       </BrowserRouter>

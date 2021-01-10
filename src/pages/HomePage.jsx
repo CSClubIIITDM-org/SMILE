@@ -26,7 +26,7 @@ const HomePage = () => {
   }, []);
   return (
     <React.Fragment>
-      <div className="mt-5">
+      <div className="mt-2">
         <Carousel />
       </div>
 
