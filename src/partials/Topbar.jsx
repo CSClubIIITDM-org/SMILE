@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import SearchBar from "./SearchBar";
+import { NavLink } from "react-router-dom";
+// import SearchBar from "./SearchBar";
 
 const Topbar = () => {
   const [links] = useState([
@@ -42,16 +42,16 @@ const Topbar = () => {
       name: "Cultural activity",
       link: "/culturalactivity",
       drop: [],
-    }
+    },
   ]);
 
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-md bg-dark navbar-dark shadow flex-column">
+      <nav className="navbar navbar-expand-md bg-light navbar-light shadow-sm flex-column">
         <div className="navbar-brand w-100 d-flex align-items-center justify-content-between">
-          <a className="navbar-brand pl-5" href="/">
+          <div className="navbar-brand pl-5" href="/">
             Logo
-          </a>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -60,7 +60,7 @@ const Topbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <SearchBar classes="d-none d-md-block"></SearchBar>
+          {/* <SearchBar classes="d-none d-md-block"></SearchBar> */}
         </div>
 
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
@@ -70,7 +70,7 @@ const Topbar = () => {
                 className="nav-link px-3"
                 to="/"
                 exact
-              //   data-toggle="dropdown"
+                //   data-toggle="dropdown"
               >
                 Home
               </NavLink>
@@ -84,7 +84,7 @@ const Topbar = () => {
                 >
                   {link.name}
                 </NavLink>
-                {link.drop.length !== 0 && (
+                {/* {link.drop.length !== 0 && (
                   <div className="dropdown-menu text-center w-100">
                     {link.drop.map((drop) => (
                       <Link
@@ -96,11 +96,11 @@ const Topbar = () => {
                       </Link>
                     ))}
                   </div>
-                )}
+                )} */}
               </li>
             ))}
           </ul>
-          <SearchBar classes="d-md-none"></SearchBar>
+          {/* <SearchBar classes="d-md-none"></SearchBar> */}
         </div>
       </nav>
     </React.Fragment>
