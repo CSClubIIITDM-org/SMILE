@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "react-awesome-slider/dist/styles.css";
-import Carousel from "../partials/carousel";
+import Carousel from "../partials/Carousel";
 import TextInfo from "../partials/Cards";
 import Title from "../partials/Title";
 import axios from "axios";
@@ -12,10 +12,17 @@ const HomePage = () => {
 
     const getAbout = async () => {
       const aboutInfo = await axios.get(`${link}/common/about`);
-      console.log(aboutInfo);
       setAbout(aboutInfo.data.message[0].desc);
     };
+    const getPubs = async () => {
+      const pubInfo = await axios.get(`${link}/common/publication`);
+      console.log(pubInfo.data.message);
+      // if (pubInfo) {
+      //   console.log(await pubInfo.data.message.sliice(1, 3));
+      // }
+    };
     getAbout();
+    getPubs();
   }, []);
   return (
     <React.Fragment>
