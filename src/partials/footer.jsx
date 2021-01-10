@@ -9,7 +9,6 @@ const Footer = () => {
   useEffect(() => {
     const getImage = async () => {
       const contact = await axios.get(`${link}/common/contact`);
-      console.log(contact);
       setContact(contact.data.message);
     };
     getImage();
@@ -22,10 +21,10 @@ const Footer = () => {
           <h2 className="ml-4">Logo</h2>
         </div>
         <div className="col-sm-4">
-          {contact.map((contact) => (
-            <>
+          {contact.map((contact, index) => (
+            <div key={index}>
               <p>
-                <b>Infomartion: </b>
+                <b>Information: </b>
                 {contact.info}
               </p>
               <p>
@@ -36,7 +35,7 @@ const Footer = () => {
                 <b>Number: </b>
                 {contact.number}
               </p>
-            </>
+            </div>
           ))}
         </div>
       </div>

@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
 import axios from "axios";
 import ReactLoader from "./Loading";
 
@@ -19,27 +17,54 @@ const Carousel = () => {
   }, [link]);
 
   return (
-    <AwesomeSlider>
-      {isLoading ? (
-        <ReactLoader content="loading images..." />
-      ) : (
-        carousel.map((slider, index) => (
-          <div
-            key={index + 1}
-            className="w-100 p-0 position-relative text-center container"
-          >
-            <img
-              src={`${link}/common/carousal/${slider._id}`}
-              alt=""
-              className="carousal"
-              style={{ opacity: 0.5 }}
-              loading="lazy"
-            />
-            <p className="position-absolute bottom-left">{slider.desc}</p>
-          </div>
-        ))
-      )}
-    </AwesomeSlider>
+    <div className="container-fluid px-0">
+      <div id="demo" className="carousel slide" data-ride="carousel">
+        <ul className="carousel-indicators">
+          {carousel.map((slider, index) => (
+            <li
+              key={slider._id}
+              data-target="#demo"
+              data-slide-to={index}
+              className={index === 0 ? "active" : ""}
+            ></li>
+          ))}
+        </ul>
+        <div
+          className="carousel-inner"
+          style={{ width: "100%", height: "700px" }}
+        >
+          {isLoading ? (
+            <ReactLoader content="loading images..." />
+          ) : (
+            carousel.map((slider, index) => (
+              <div
+                className={
+                  index + 1 === 1 ? "carousel-item active" : "carousel-item"
+                }
+                key={index + 1}
+              >
+                <img
+                  src={`${link}/common/carousal/${slider._id}`}
+                  alt=""
+                  className="mx-auto"
+                  style={{ width: "100%", height: "700px" }}
+                />
+                <div className="carousel-caption">
+                  <p>{slider.desc}</p>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+
+        <a className="carousel-control-prev" href="#demo" data-slide="prev">
+          <span className="carousel-control-prev-icon"></span>
+        </a>
+        <a className="carousel-control-next" href="#demo" data-slide="next">
+          <span className="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
   );
 };
 

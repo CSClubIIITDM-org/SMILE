@@ -84,4 +84,35 @@ body {
   border-left: 3px solid #2b00ff;
   padding-left: 1rem;
 }
+
+.page-fade {
+  -webkit-animation: page 0.4s ease-in forwards;
+          animation: page 0.4s ease-in forwards;
+}
+
+@-webkit-keyframes page {
+  from {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes page {
+  from {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=style.css.map */
