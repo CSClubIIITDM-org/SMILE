@@ -1,19 +1,17 @@
 import React from "react";
-import TextInfo from "../partials/Cards";
+import CardInfo from "../partials/Cards";
+import Title from "../partials/Title";
 
 const Research = () => {
   return (
     <React.Fragment>
-      <div className="container-fluid">
-        <h1 style={{ textAlign: "center", padding: "15px", fontSize: "50px" }}>
-          Research
-        </h1>
-      </div>
-
-      <div className="container-fluid my-5">
-        <TextInfo />
-        <TextInfo />
-        <TextInfo />
+      <div className="container-fluid my-5 px-5">
+        <Title title="Research" />
+        <div className="mt-5">
+          <CardInfo />
+          <CardInfo />
+          <CardInfo />
+        </div>
       </div>
     </React.Fragment>
   );

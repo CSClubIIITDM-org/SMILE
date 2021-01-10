@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-// import SearchBar from "./SearchBar";
 
 const Topbar = () => {
   const [links] = useState([
-    {
-      name: "About Us",
-      link: "/aboutus",
-      drop: [],
-    },
     {
       name: "Research",
       link: "/research",

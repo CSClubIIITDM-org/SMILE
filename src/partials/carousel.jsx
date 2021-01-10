@@ -1,50 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
+import axios from "axios";
 
 const Carousel = () => {
+  const [carousel, setCarousel] = useState([]);
+  const link = process.env.REACT_APP_API;
 
-    const [slider] = useState([
-        {
-          image:
-            "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-          content: "Some Research content",
-        },
-        {
-          image:
-            "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-          content: "Some Research content",
-        },
-        {
-          image:
-            "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-          content: "Some Research content",
-        },
-        {
-          image:
-            "https://medicine.utah.edu/orthopaedics/research/labs/harold-dunn/images/lab-full-800px.jpg",
-          content: "Some Research content",
-        },
-      ]);
+  useEffect(() => {
+    const getImage = async () => {
+      const images = await axios.get(`${link}/common/carousal`);
+      console.log(images);
+      setCarousel(images.data.message);
+    };
+    getImage();
+  }, [link]);
 
-      return(
-        <AwesomeSlider>
-        {slider.map((slider, index) => (
-          <div
-            key={index + 1}
-            className="w-100 p-0 position-relative text-center container"
-          >
-            <img src={slider.image} alt="" className="carousal" style={{opacity:0.5}} />
-            <p
-              className="position-absolute bottom-left"
-              //   style={{ marginTop: "-40vh", zIndex: 4000, opacity: 1 }}
-            >
-              {slider.content}
-            </p>
-          </div>
-        ))}
-      </AwesomeSlider>
-      );  
-}
+  return (
+    <AwesomeSlider>
+      {carousel.map((slider, index) => (
+        <div
+          key={index + 1}
+          className="w-100 p-0 position-relative text-center container"
+        >
+          <img
+            src={`${link}/common/carousal/${slider._id}`}
+            alt=""
+            className="carousal"
+            style={{ opacity: 0.5 }}
+            loading="lazy"
+          />
+          <p className="position-absolute bottom-left">{slider.desc}</p>
+        </div>
+      ))}
+    </AwesomeSlider>
+  );
+};
 
 export default Carousel;

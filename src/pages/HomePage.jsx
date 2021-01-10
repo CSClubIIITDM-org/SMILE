@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "react-awesome-slider/dist/styles.css";
 import Carousel from "../partials/carousel";
 import TextInfo from "../partials/Cards";
 import Title from "../partials/Title";
+import axios from "axios";
 
 const HomePage = () => {
+  const [about, setAbout] = useState("");
+  useEffect(() => {
+    const link = process.env.REACT_APP_API;
+
+    const getAbout = async () => {
+      const aboutInfo = await axios.get(`${link}/common/about`);
+      console.log(aboutInfo);
+      setAbout(aboutInfo.data.message[0].desc);
+    };
+    getAbout();
+  }, []);
   return (
     <React.Fragment>
       <div className="mt-5">
@@ -15,25 +27,19 @@ const HomePage = () => {
         <div className="row mt-5">
           <div className="col-sm-12 mt-5">
             <Title title="About Us" />
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
+            <p>{about}</p>
           </div>
         </div>
       </div>
-      <div className="container-fluid my-5">
-        <TextInfo />
-        <TextInfo />
-        <TextInfo />
+      <div className="container-fluid my-5 px-5">
+        <div className="row mt-5">
+          <div className="col-sm-12 mt-5">
+            <Title title="Popular Publications" />
+            <TextInfo />
+            <TextInfo />
+            <TextInfo />
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
