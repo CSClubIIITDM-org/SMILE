@@ -2,11 +2,17 @@
 @import "./components/carousel";
 @import "./components/helper";
 
+$color: #2b00ff;
+
 * {
   font-family: "Playfair Display", serif;
 }
 body {
   overflow-x: hidden;
+}
+
+a {
+  color: $color;
 }
 
 .list-group-flush > .list-group-item {
@@ -20,7 +26,7 @@ body {
 }
 
 .title {
-  border-left: 3px solid #2b00ff;
+  border-left: 3px solid $color;
   padding-left: 1rem;
 }
 

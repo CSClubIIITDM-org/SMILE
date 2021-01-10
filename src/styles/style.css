@@ -70,6 +70,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: #2b00ff;
+}
+
 .list-group-flush > .list-group-item {
   background-color: white;
 }
