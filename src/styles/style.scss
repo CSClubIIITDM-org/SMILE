@@ -2,6 +2,7 @@
 @import "./components/helper";
 @import "./components/button";
 @import "./components/scrollbar";
+@import "./components/navbar";
 
 $color: #2b00ff;
 $black: rgb(21, 21, 21);
@@ -43,7 +44,7 @@ a {
   backface-visibility: hidden;
 }
 .member-card {
-  height: 300px;
+  min-height: 300px;
   width: 100%;
   object-fit: cover;
 }

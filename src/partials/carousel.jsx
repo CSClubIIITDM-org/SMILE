@@ -48,7 +48,7 @@ const Carousel = () => {
                 <img
                   src={`${link}/common/carousal/${slider._id}`}
                   alt=""
-                  className="mx-auto"
+                  className="mx-auto page-fade"
                   style={{ width: "100%", height: "700px", objectFit: "cover" }}
                 />
                 <div className="carousel-caption bg-caption mb-0 w-100">

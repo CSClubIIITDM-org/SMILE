@@ -25,7 +25,7 @@ const Research = () => {
         <Title title="Research Projects" />
         <div className="mt-5">
           {isLoading ? (
-            <ReactLoader content="loading Research Projects..." />
+            <ReactLoader content="Loading Research Projects..." />
           ) : (
             researches.map((research, index) => (
               <div

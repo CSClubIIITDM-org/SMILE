@@ -26,7 +26,7 @@ const Member = () => {
       <div className="container-fluid my-5 px-5 page-fade">
         <Title title="Members" />
         {isLoading ? (
-          <ReactLoader content="Members Loading ..." />
+          <ReactLoader content="Loading Members..." />
         ) : (
           <div className="row page-fade">
             {members.map((member, index) => (
@@ -42,9 +42,13 @@ const Member = () => {
                           className="member-card"
                         />
                       </div>
-                      <div className="w-50 pl-2">
-                        <h4 className="card-title title mt-4">{member.name}</h4>
-                        <hr />
+                      <div className="w-50 pl-2 d-flex flex-column justify-content-between">
+                        <div>
+                          <h4 className="card-title title mt-4">
+                            {member.name}
+                          </h4>
+                          <hr />
+                        </div>
                         <p className="card-text">
                           <b>Role: {"    "}</b>
                           {member.desc}
@@ -58,14 +62,7 @@ const Member = () => {
                             </em>
                           ))}
                         </p>
-                        <div
-                          className="border mx-auto"
-                          style={{
-                            position: "absolute",
-                            bottom: "20px",
-                            left: "60%",
-                          }}
-                        >
+                        <div className="text-center">
                           <Link to={`/member/${member._id}`}>
                             <button className="button">View More</button>
                           </Link>

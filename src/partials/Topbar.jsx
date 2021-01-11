@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../assets/logo/dark.svg";
 
 const Topbar = () => {
   const [links] = useState([
@@ -35,7 +36,7 @@ const Topbar = () => {
       <nav className="navbar navbar-expand-md bg-light navbar-light shadow-sm flex-column">
         <div className="navbar-brand w-100 d-flex align-items-center justify-content-between">
           <div className="navbar-brand pl-5" href="/">
-            Logo
+            <img src={Logo} alt="" height="100px" />
           </div>
           <button
             className="navbar-toggler"

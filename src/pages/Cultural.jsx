@@ -26,7 +26,7 @@ const Cultural = () => {
       <div className="container-fluid px-5 my-5 page-fade">
         <Title title="Cultural Activities" />
         {isLoading ? (
-          <ReactLoader content="Cultural Activities Loading ..." />
+          <ReactLoader content="Loading Cultural Activities..." />
         ) : (
           <div className="card-columns page-fade">
             {culturals.map((cultural, index) => (

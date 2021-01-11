@@ -25,7 +25,7 @@ const Facility = () => {
       <div className="container-fluid bg-light px-5 mt-5 page-fade">
         <Title title="Facility" />
         {isLoading ? (
-          <ReactLoader content="Facilities Loading ..." />
+          <ReactLoader content="Loading Facilities..." />
         ) : (
           <div className="card-columns my-5 page-fade">
             {facilities.map((facilty, index) => (

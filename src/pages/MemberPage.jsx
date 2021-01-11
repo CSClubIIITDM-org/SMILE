@@ -29,8 +29,8 @@ const MemberPage = ({ match }) => {
         {isLoading ? (
           <ReactLoader content="Loading Member ..." />
         ) : (
-          members.map((mem) => (
-            <>
+          members.map((mem, index) => (
+            <div key={index + 1}>
               <Title title={mem.name} />
               <div className="row">
                 <div className="col-sm-3">
@@ -61,7 +61,11 @@ const MemberPage = ({ match }) => {
                       </em>
                     ))}
                   </p>
-                  <a href={mem.websiteLink} target="blank">
+                  <a
+                    href={mem.websiteLink}
+                    target="blank"
+                    style={{ wordBreak: "break-word" }}
+                  >
                     {mem.websiteLink}
                   </a>
                   <div>
@@ -82,7 +86,7 @@ const MemberPage = ({ match }) => {
                 <Title title={`About  ${mem.name}`} />
                 <p>{mem.about}</p>
               </div>
-            </>
+            </div>
           ))
         )}
       </div>
