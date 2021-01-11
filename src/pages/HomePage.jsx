@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "react-awesome-slider/dist/styles.css";
 import Carousel from "../partials/Carousel";
 import CardInfo from "../partials/Cards";
 import Title from "../partials/Title";
