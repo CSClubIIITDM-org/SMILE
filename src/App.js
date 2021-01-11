@@ -7,8 +7,9 @@ import Facility from "./pages/Facility";
 import Topbar from "./partials/Topbar";
 import Footer from "./partials/Footer";
 import Member from "./pages/Member";
-import "./styles/style.css";
 import Cultural from "./pages/Cultural";
+import MemberPage from "./pages/MemberPage";
+import "./styles/style.css";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/Publication" exact component={Publication} />
           <Route path="/Research" exact component={Research} />
           <Route path="/member" exact component={Member} />
+          <Route path="/member/:id" exact component={MemberPage} />
           <Route path="/facility" exact component={Facility} />
           <Route path="/culturalactivity" exact component={Cultural} />
         </Switch>

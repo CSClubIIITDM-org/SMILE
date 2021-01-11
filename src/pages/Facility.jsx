@@ -22,24 +22,26 @@ const Facility = () => {
   }, [link]);
   return (
     <React.Fragment>
-      <div className="container-fluid bg-light px-5 mt-5">
+      <div className="container-fluid bg-light px-5 mt-5 page-fade">
         <Title title="Facility" />
         {isLoading ? (
           <ReactLoader content="Facilities Loading ..." />
         ) : (
-          <div className="card-columns">
+          <div className="card-columns my-5 page-fade">
             {facilities.map((facilty, index) => (
-              <div className="card text-center" key={index + 1}>
+              <div className="card border-0 shadow-sm" key={index + 1}>
                 <div className="card-body">
                   <div className="card-img-top mx-auto">
                     <img
                       src={`${link}/common/facility/${facilty._id}`}
                       alt=""
-                      className="img-fluid"
                       loading="eager"
+                      height="300px"
+                      width="100%"
+                      style={{ objectFit: "cover" }}
                     />
                   </div>
-                  <h4 className="card-title">{facilty.name}</h4>
+                  <h4 className="card-title title mt-4">{facilty.name}</h4>
                   <p className="card-text">{facilty.desc}</p>
                 </div>
               </div>

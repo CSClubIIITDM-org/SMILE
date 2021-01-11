@@ -28,11 +28,11 @@ const HomePage = () => {
   }, []);
   return (
     <React.Fragment>
-      <div className="mt-2">
+      <div className="mt-2 page-fade">
         <Carousel />
       </div>
 
-      <div className="container-fluid bg-light px-5">
+      <div className="container-fluid bg-light px-5 page-fade">
         <div className="row mt-5">
           <div className="col-sm-12 mt-5">
             <Title title="About Us" />
@@ -40,7 +40,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid my-5 px-5">
+      <div className="container-fluid my-5 px-5 page-fade">
         <div className="row mt-5">
           <div className="col-sm-12 mt-5">
             <Title title="Popular Publications" />

@@ -1,59 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-.awssld {
-  --content-background-color: white;
-  --organic-arrow-color: white;
-  height: 90vh;
-  width: 100%;
-}
-
-.carousal {
-  -webkit-filter: blur(1.2px);
-          filter: blur(1.2px);
-  opacity: 0.8;
-  overflow-x: hidden;
-  height: 80vh;
-  width: 100%;
-}
-
-.aws-sld__content p {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  opacity: 1;
-  -webkit-transition: opacity 0.35s ease-out, -webkit-transform 0.45s cubic-bezier(0.15, 0.3, 0.15, 1);
-  transition: opacity 0.35s ease-out, -webkit-transform 0.45s cubic-bezier(0.15, 0.3, 0.15, 1);
-  transition: transform 0.45s cubic-bezier(0.15, 0.3, 0.15, 1), opacity 0.35s ease-out;
-  transition: transform 0.45s cubic-bezier(0.15, 0.3, 0.15, 1), opacity 0.35s ease-out, -webkit-transform 0.45s cubic-bezier(0.15, 0.3, 0.15, 1);
-}
-
-.aws-sld__content p:nth-child(2) {
-  -webkit-transition-delay: 0.05s, 0.05s;
-          transition-delay: 0.05s, 0.05s;
-}
-
-.aws-sld__content--exit p {
-  -webkit-transition: opacity 0.4s ease-out, -webkit-transform 0.225s cubic-bezier(0.85, 0, 0.85, 0.7);
-  transition: opacity 0.4s ease-out, -webkit-transform 0.225s cubic-bezier(0.85, 0, 0.85, 0.7);
-  transition: transform 0.225s cubic-bezier(0.85, 0, 0.85, 0.7), opacity 0.4s ease-out;
-  transition: transform 0.225s cubic-bezier(0.85, 0, 0.85, 0.7), opacity 0.4s ease-out, -webkit-transform 0.225s cubic-bezier(0.85, 0, 0.85, 0.7);
-}
-
-.aws-sld__content--exit p:nth-child(2) {
-  -webkit-transition-delay: 0.05s, 0.05s;
-          transition-delay: 0.05s, 0.05s;
-}
-
-.aws-sld__content--moveLeft p {
-  -webkit-transform: translate3d(-50px, 0, 0);
-          transform: translate3d(-50px, 0, 0);
-  opacity: 0;
-}
-
-.aws-sld__content--moveRight p {
-  -webkit-transform: translate3d(50px, 0, 0);
-          transform: translate3d(50px, 0, 0);
-  opacity: 0;
-}
-
 .bg-dark {
   background-color: #151515 !important;
 }
@@ -161,6 +106,27 @@ a {
 .title {
   border-left: 3px solid #2b00ff;
   padding-left: 1rem;
+}
+
+.bg-caption {
+  background-color: rgba(21, 21, 21, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  right: 0%;
+  left: 0%;
+  bottom: 0;
+}
+
+.card-columns {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.member-card {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .page-fade {

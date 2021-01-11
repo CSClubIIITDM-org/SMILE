@@ -26,18 +26,28 @@ const Cultural = () => {
       <div className="container-fluid px-5 my-5 page-fade">
         <Title title="Cultural Activities" />
         {isLoading ? (
-          <ReactLoader content="Facilities Loading ..." />
+          <ReactLoader content="Cultural Activities Loading ..." />
         ) : (
-          <div className="card-columns">
+          <div className="card-columns page-fade">
             {culturals.map((cultural, index) => (
-              <div className="card text-center" key={index + 1}>
-                <div className="card-img-top mx-auto">
-                  <img
-                    src={`${link}/common/cultural/${cultural._id}`}
-                    alt=""
-                    className="img-fluid"
-                    loading="eager"
-                  />
+              <div className="card border-0 shadow-sm" key={index + 1}>
+                <div className="card-body">
+                  <div className="card-img-top mx-auto">
+                    <img
+                      src={`${link}/common/cultural/${cultural._id}`}
+                      alt=""
+                      loading="eager"
+                      height="300px"
+                      width="100%"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <h4 className="card-title title mt-4">{cultural.event}</h4>
+                  <p className="card-text">{cultural.desc}</p>
+                  <p className="card-text">
+                    <i className="fas fa-calendar-alt pr-3"></i>
+                    {cultural.eventDate}
+                  </p>
                 </div>
               </div>
             ))}

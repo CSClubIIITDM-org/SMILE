@@ -8,18 +8,20 @@ const Carousel = () => {
   const link = process.env.REACT_APP_API;
 
   useEffect(() => {
+    const ac = new AbortController();
     const getImage = async () => {
       const images = await axios.get(`${link}/common/carousal`);
       setCarousel(images.data.message);
       setisLoading(false);
     };
     getImage();
+    return () => ac.abort();
   }, [link]);
 
   return (
     <div className="container-fluid px-0">
       <div id="demo" className="carousel slide" data-ride="carousel">
-        <ul className="carousel-indicators">
+        <ul className="carousel-indicators mb-0">
           {carousel.map((slider, index) => (
             <li
               key={slider._id}
@@ -47,9 +49,9 @@ const Carousel = () => {
                   src={`${link}/common/carousal/${slider._id}`}
                   alt=""
                   className="mx-auto"
-                  style={{ width: "100%", height: "700px" }}
+                  style={{ width: "100%", height: "700px", objectFit: "cover" }}
                 />
-                <div className="carousel-caption">
+                <div className="carousel-caption bg-caption mb-0 w-100">
                   <p>{slider.desc}</p>
                 </div>
               </div>
