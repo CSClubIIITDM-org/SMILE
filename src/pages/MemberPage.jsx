@@ -49,21 +49,11 @@ const MemberPage = ({ match }) => {
                   </p>
                   <p className="card-text">
                     <b>Research Interests: {"    "}</b>
-                    {mem.researchInterest.map((edu) => (
-                      <em key={edu}>
-                        {edu}
-                        {",   "}
-                      </em>
-                    ))}
+                    {mem.researchInterest}
                   </p>
                   <p className="card-text">
                     <b>Education: {"    "}</b>
-                    {mem.education.map((edu) => (
-                      <em key={edu}>
-                        {edu}
-                        {",   "}
-                      </em>
-                    ))}
+                    {mem.education}
                   </p>
                   <a
                     href={mem.websiteLink}

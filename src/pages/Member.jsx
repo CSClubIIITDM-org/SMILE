@@ -54,12 +54,7 @@ const Member = () => {
                         </p>
                         <p className="card-text">
                           <b>Research Interests: {"    "}</b>
-                          {member.researchInterest.map((edu) => (
-                            <em key={edu}>
-                              {edu}
-                              {",   "}
-                            </em>
-                          ))}
+                          {member.researchInterest}
                         </p>
                         <div className="text-center">
                           <Link to={`/member/${member._id}`}>
