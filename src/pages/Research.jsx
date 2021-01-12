@@ -22,7 +22,7 @@ const Research = () => {
   return (
     <React.Fragment>
       <div className="container-fluid my-5 px-5 page-fade">
-        <Title title="Research Projects" />
+        <Title title="Research Projects"></Title>
         <div className="mt-5">
           {isLoading ? (
             <ReactLoader content="Loading Research Projects..." />

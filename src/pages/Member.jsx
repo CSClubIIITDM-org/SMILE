@@ -14,7 +14,6 @@ const Member = () => {
     const ac = new AbortController();
     const getMember = async () => {
       const members = await axios.get(`${link}/common/member`);
-      console.log(members.data.message);
       setMembers(members.data.message);
       setIsLoading(false);
     };

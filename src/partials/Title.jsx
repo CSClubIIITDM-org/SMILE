@@ -1,10 +1,13 @@
 import React from "react";
 
-const Title = ({ title }) => {
+const Title = ({ title, children }) => {
   return (
     <React.Fragment>
-      <h1 className="title">{title}</h1>
-      <hr></hr>
+      <div className="d-flex justify-content-between">
+        <h1 className="title">{title}</h1>
+        {children}
+      </div>
+      <hr className="mt-2" />
     </React.Fragment>
   );
 };

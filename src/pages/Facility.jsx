@@ -13,7 +13,6 @@ const Facility = () => {
     const ac = new AbortController();
     const getFacility = async () => {
       const facilities = await axios.get(`${link}/common/facility`);
-      console.log(facilities.data.message);
       setFacilities(facilities.data.message);
       setIsLoading(false);
     };

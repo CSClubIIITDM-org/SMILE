@@ -13,7 +13,6 @@ const Cultural = () => {
     const ac = new AbortController();
     const getFacility = async () => {
       const culturals = await axios.get(`${link}/common/cultural`);
-      console.log(culturals.data.message);
       setCulturals(culturals.data.message);
       setIsLoading(false);
     };

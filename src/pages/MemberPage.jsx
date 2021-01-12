@@ -43,6 +43,10 @@ const MemberPage = ({ match }) => {
                 </div>
                 <div className="col-sm-6 d-flex justify-content-between flex-column">
                   <h1 className="mb-4">{mem.name}</h1>
+                  <p>
+                    <b>Role: {"    "}</b>
+                    {mem.desc}
+                  </p>
                   <p className="card-text">
                     <b>Research Interests: {"    "}</b>
                     {mem.researchInterest.map((edu) => (
