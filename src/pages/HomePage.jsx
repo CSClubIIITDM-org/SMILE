@@ -25,6 +25,7 @@ const HomePage = () => {
     getAbout();
     getPubs();
   }, []);
+
   return (
     <React.Fragment>
       <div className="mt-2 page-fade">
